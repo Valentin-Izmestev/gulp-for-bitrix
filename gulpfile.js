@@ -7,29 +7,29 @@ let path = {
     //готовый результат
     build:{
         html: project_folder +"/",
-        css: project_folder + "/local/templates/elmedica/css/",
-        js: project_folder +"/local/templates/elmedica/js/",
-        img: project_folder +"/local/templates/elmedica/img/",
-        image: project_folder +"/local/templates/elmedica/image/",
-        fonts: project_folder +"/local/templates/elmedica/fonts/"
+        css: project_folder + "/css/",
+        js: project_folder +"/js/",
+        img: project_folder +"/img/",
+        image: project_folder +"/image/",
+        fonts: project_folder +"/fonts/"
     },
     //исходники
     src:{
         html: [source_folder +"/*.html", "!" + source_folder +"/_*.html"],
-        scss: source_folder +"/local/templates/elmedica/scss/style.scss",
-        js: source_folder +"/local/templates/elmedica/js/script.js",
-        img: source_folder +"/local/templates/elmedica/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        image: source_folder +"/local/templates/elmedica/image/**/*.{jpg,png,svg,gif,ico,webp}",
-        fonts: source_folder + "/local/templates/elmedica/fonts/**/*.{eot,ttf,woff,woff2,svg}"
+        scss: source_folder +"/scss/style.scss",
+        js: source_folder +"/js/script.js",
+        img: source_folder +"/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        image: source_folder +"/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        fonts: source_folder + "/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // пути папок за которыми нужно будет следить
     watch:{
         html: source_folder +"/**/*.html",
-        scss: source_folder +"/local/templates/elmedica/scss/**/*.scss",
-        js: source_folder +"/local/templates/elmedica/js/**/*.js",
-        img: source_folder +"/local/templates/elmedica/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        image: source_folder +"/local/templates/elmedica/image/**/*.{jpg,png,svg,gif,ico,webp}",
-        fonts: source_folder + "/local/templates/elmedica/fonts/**/*.{eot,ttf,woff,woff2,svg}"
+        scss: source_folder +"/scss/**/*.scss",
+        js: source_folder +"/js/**/*.js",
+        img: source_folder +"/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        image: source_folder +"/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        fonts: source_folder + "/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // путь к папке, которая будет чиститься при сохранении
     clean: "./" + project_folder + "/"
@@ -125,7 +125,7 @@ gulp.task('svgSprite', function(){
                 }
             }
         }))
-        .pipe(dest(path.build.img))
+        .pipe(dest(path.src.img))
 });
 
 function watchFiles(params){
